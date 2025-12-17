@@ -9,11 +9,12 @@ A professional, responsive, and **no-build** portfolio template designed specifi
 ## ✨ Features
 
 - **🚀 Zero Build Step**: No `npm install`, `webpack`, or `vite` required. It runs directly in the browser using ES Modules and CDNs.
-- **📄 JSON Driven**: Manage all your projects and site configurations via simple JSON files (`data.js` and `config.js`).
+- **📄 JSON Driven**: Manage all content (Projects, Resume, Blog, Config) via simple JSON files (`data.js` and `config.js`).
+- **💼 Professional Resume**: A dedicated, printable resume page with Experience, Education, and Skills sections.
+- **📰 Blog Integration**: Display your latest articles automatically via **RSS Feed** or manage them manually.
 - **🎨 Multiple Themes**: Comes with 5 built-in color themes (Android Green, Ocean Blue, Berry, Sunset, Midnight).
 - **🌗 Dark Mode**: Fully supported dark/light mode with persistent preference.
 - **📱 Responsive Design**: Mobile-first architecture using Tailwind CSS.
-- **🔍 Filterable Projects**: Filter projects by category or technical tags.
 
 ## 🚀 Quick Start
 
@@ -36,53 +37,69 @@ Then open `http://localhost:8000`.
 
 ## 🛠 Customization
 
+All content is managed in the root directory files. You do not need to touch the `components/` folder unless you want to change the layout logic.
+
 ### 1. Basic Info & Theme (`config.js`)
-Open `config.js` to change the site title, description, social links, and the visual theme.
+Open `config.js` to change the site title, UI strings, social links, and the visual theme.
 
 ```javascript
 export const siteConfig = {
   // Options: "Smartphone", "Code", "Terminal", "Cpu", "Laptop", "Zap"
-  headerIcon: "Code",
+  headerIcon: "Smartphone",
 
   // Options: "android", "ocean", "berry", "sunset", "midnight"
-  theme: "ocean" 
+  theme: "android" 
 };
 ```
 
-### 2. Adding Projects (`data.js`)
-Open `data.js` to add your own projects. The structure is straightforward:
+### 2. Projects (`data.js`)
+Find the `projects` array in `data.js`. Add your app details, screenshots, and tech stack here.
 
 ```javascript
 {
-  id: "unique-id",
-  title: "Project Name",
-  thumbnail: "url-to-image",
-  medias: ["url-to-screenshot-1", "youtube-url"], // Optional gallery (Images or YouTube)
+  id: "1",
+  title: "My Awesome App",
+  thumbnail: "https://...",
+  medias: [ "https://...", "https://youtube.com/..." ], // Supports Images and YouTube
   year: "2024",
   category: "Personal Project",
   tags: ["Kotlin", "Compose"],
-  demoUrl: "https://...",
-  githubUrl: "https://...",
   description: "...",
-  challenges: ["Challenge 1", "Challenge 2"],
-  techStack: ["Lib 1", "Lib 2"]
+  challenges: ["...", "..."],
+  techStack: ["Kotlin", "Retrofit", "Hilt"]
 }
 ```
 
-### 3. Images
-Since there is no build step, you can:
-1. Create an `assets` folder in the root directory, put your images there, and reference them as `./assets/image.png`.
-2. Or use external URLs (like Imgur, AWS S3, or your GitHub repository's raw content URL).
+### 3. Resume (`data.js`)
+Find the `resumeData` object in `data.js`. You can configure:
+- **Profile**: Name, summary, contact info.
+- **Skills**: Categorized skills with descriptions.
+- **Experience**: Work history with achievements.
+- **Education & Certificates**.
+- **Resume PDF Link**: URL to download your actual PDF file.
 
-## 🤖 Built with Google AI Studio
+### 4. Blog / Articles (`data.js`)
+You have two options for the "Technical Articles" section:
 
-This project was crafted with the assistance of **Google AI Studio**. The architecture is intentionally kept simple (ES Modules, No-Build) to make it easy for both humans and AI to read and modify.
+**Option A: Automatic RSS Feed**
+Set your RSS feed URL (e.g., Medium, Dev.to). The site uses `rss2json` to fetch the latest 3 posts.
+```javascript
+export const blogData = {
+  rssUrl: "https://medium.com/feed/@yourusername", 
+  // ...
+};
+```
 
-**Tips for AI-Assisted Customization:**
-If you want to use Gemini or other AI tools to modify this site, the file structure is your best friend.
-1.  **Copy Context**: Simply copy the content of `data.js` (for content) or `themes.js` (for colors).
-2.  **Prompt**: Ask the AI, *"Here is my data.js, please add a new project with these details..."* or *"Update themes.js to use a purple color scheme."*
-3.  **Paste**: Paste the result back. No complex build pipelines means fewer errors when working with AI generated code.
+**Option B: Manual Entry**
+Leave `rssUrl` empty and fill the `articles` array manually.
+```javascript
+export const blogData = {
+  rssUrl: "", 
+  articles: [
+    { title: "My Article", summary: "...", link: "...", date: "2024-01-01" }
+  ]
+};
+```
 
 ## 🌍 Deployment (GitHub Pages)
 
@@ -98,13 +115,13 @@ Wait a minute, and your site will be live!
 
 ## 🧩 Project Structure
 
-- `index.html`: The entry point. Imports Tailwind and React via CDN.
-- `index.js`: Mounts the React application.
+- `index.html`: Entry point. Imports Tailwind and React via CDN.
+- `index.js`: Mounts the React application and handles Theme CSS variables.
 - `App.js`: Main routing logic.
-- `config.js`: Global settings and UI text strings.
-- `data.js`: Project data.
+- `config.js`: Global settings (Theme, UI Strings).
+- `data.js`: **MAIN CONTENT SOURCE** (Projects, Resume, Blog).
 - `themes.js`: Color palette definitions.
-- `components/`: Reusable UI components (Hero, ProjectCard, etc.).
+- `components/`: Reusable UI components.
 - `context/`: React Context (Theme management).
 
 ## 📄 License
