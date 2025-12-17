@@ -46,6 +46,12 @@ export const uiStrings = {
     challenges: "Key Challenges & Solutions",
     viewImage: "View"
   },
+  blog: {
+    title: "Technical Articles",
+    readMore: "Read Article",
+    viewBlog: "Visit My Blog",
+    loading: "Loading articles..."
+  },
   resume: {
     experience: "Work Experience",
     education: "Education",

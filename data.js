@@ -86,6 +86,40 @@ export const projects = [
   },
 ];
 
+// Blog Data Configuration
+export const blogData = {
+  // If set, the site will fetch the latest 3 articles from this RSS feed.
+  // Example: "https://medium.com/feed/@yourusername" or "https://dev.to/feed/yourusername"
+  // If left empty "", it will fallback to the manual 'articles' array below.
+  rssUrl: "", 
+  
+  // URL to your main blog page (e.g., Medium profile, Dev.to profile, or personal blog).
+  // If empty, the "Visit My Blog" button will not be displayed.
+  blogUrl: "https://medium.com/",
+
+  // Manual articles fallback. Used only if rssUrl is empty.
+  articles: [
+    {
+      title: "Mastering Jetpack Compose: State Management",
+      summary: "A deep dive into hoisting state, side-effects, and best practices for managing complex UI states in modern Android development.",
+      date: "2024-03-15",
+      link: "#"
+    },
+    {
+      title: "Optimizing Android App Startup Time",
+      summary: "Practical techniques using Baseline Profiles and Macrobenchmark to reduce cold start times by up to 40%.",
+      date: "2024-01-22",
+      link: "#"
+    },
+    {
+      title: "Clean Architecture in Kotlin",
+      summary: "How to structure your multi-module Android projects for better testability and scalability using Clean Architecture principles.",
+      date: "2023-11-05",
+      link: "#"
+    }
+  ]
+};
+
 // Resume Data
 export const resumeData = {
   resumeUrl: "https://example.com/path-to-your-resume.pdf", // Link to download PDF
