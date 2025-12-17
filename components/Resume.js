@@ -58,7 +58,7 @@ const Resume = () => {
         <!-- Experience Section -->
         <section className="mb-12">
           <h2 className="text-2xl font-bold text-slate-900 dark:text-white mb-8 flex items-center gap-3">
-            <div className="p-2 bg-android-100 dark:bg-android-900/30 rounded-lg text-android-600 dark:text-android-400">
+            <div className="p-2 bg-android-100 dark:bg-android-900/50 rounded-lg text-android-700 dark:text-android-300">
               <${Briefcase} size=${24} />
             </div>
             ${uiStrings.resume.experience}
