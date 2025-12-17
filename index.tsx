@@ -1,0 +1,1 @@
+// This file is unused and can be safely deleted. The project uses index.js as the entry point.
