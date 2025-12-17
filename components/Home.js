@@ -16,6 +16,11 @@ const Home = () => {
   const [articles, setArticles] = useState([]);
   const [loadingArticles, setLoadingArticles] = useState(false);
 
+  // Scroll to top on mount (e.g. when navigating back from Resume)
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   // Projects Filtering Logic
   const categories = useMemo(() => {
     const cats = new Set(projects.map(p => p.category));
