@@ -44,7 +44,7 @@ const ProjectDetail = () => {
         <div className="grid md:grid-cols-3 gap-8 mb-12">
           <div className="md:col-span-2">
             <div className="flex flex-wrap items-center gap-3 mb-4">
-              <span className="px-3 py-1 bg-android-100 text-android-800 dark:bg-android-600 dark:text-white text-sm font-semibold rounded-full">
+              <span className="px-3 py-1 bg-android-100 text-android-800 dark:bg-android-900 dark:text-android-200 border border-android-200 dark:border-android-800 text-sm font-semibold rounded-full">
                 ${project.category}
               </span>
               <span className="flex items-center text-slate-500 dark:text-slate-400 text-sm">

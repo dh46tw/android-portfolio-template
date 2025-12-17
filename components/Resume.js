@@ -113,10 +113,15 @@ const Resume = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             ${resumeData.skills.map((skillGroup, idx) => html`
               <div key=${idx} className="bg-white dark:bg-slate-800 p-6 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm hover:shadow-md transition-shadow">
-                <h3 className="font-semibold text-slate-900 dark:text-white mb-4 flex items-center gap-2">
+                <h3 className="font-semibold text-slate-900 dark:text-white mb-2 flex items-center gap-2">
                   <span className="w-2 h-6 bg-android-500 rounded-full"></span>
                   ${skillGroup.category}
                 </h3>
+                ${skillGroup.description && html`
+                  <p className="text-sm text-slate-600 dark:text-slate-400 mb-4 leading-relaxed">
+                    ${skillGroup.description}
+                  </p>
+                `}
                 <div className="flex flex-wrap gap-2">
                   ${skillGroup.items.map(item => html`
                     <span key=${item} className="px-3 py-1.5 text-sm bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-200 rounded-lg">

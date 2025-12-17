@@ -136,18 +136,22 @@ export const resumeData = {
   skills: [
     {
       category: "Languages",
+      description: "Primary languages for application development and automation scripts.",
       items: ["Kotlin", "Java", "Python", "SQL", "Shell Scripting"]
     },
     {
       category: "Android SDK",
+      description: "Extensive experience with the core Android API surface and Jetpack libraries.",
       items: ["Jetpack Compose", "Coroutines & Flow", "Dagger/Hilt", "Room", "Retrofit", "WorkManager"]
     },
     {
       category: "Architecture & Design",
+      description: "Principles used to create robust, testable, and maintainable codebases.",
       items: ["MVVM", "MVI", "Clean Architecture", "SOLID Principles", "Design Patterns"]
     },
     {
       category: "Tools & DevOps",
+      description: "Tools for version control, CI/CD pipelines, and project management.",
       items: ["Git", "Gradle", "CI/CD (GitHub Actions)", "Firebase", "Jira", "Figma"]
     }
   ],
