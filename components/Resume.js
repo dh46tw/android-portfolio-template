@@ -70,7 +70,7 @@ const Resume = () => {
                 <!-- Timeline Dot -->
                 <div className="absolute -left-[41px] top-1.5 w-5 h-5 rounded-full border-4 border-white dark:border-slate-900 bg-slate-300 dark:bg-slate-600 group-hover:bg-android-500 transition-colors"></div>
                 
-                <div className="flex flex-col md:flex-row md:items-baseline md:justify-between mb-2">
+                <div className="flex flex-col items-start md:flex-row md:items-baseline md:justify-between mb-2 gap-2 md:gap-0">
                   <h3 className="text-xl font-bold text-slate-900 dark:text-white">${job.role}</h3>
                   <span className="text-sm font-mono text-slate-500 dark:text-slate-400 whitespace-nowrap bg-slate-100 dark:bg-slate-800 px-2 py-1 rounded">
                     ${job.period}
@@ -134,32 +134,9 @@ const Resume = () => {
           </div>
         </section>
 
-        <!-- Two Column Layout for Education and Awards -->
+        <!-- Two Column Layout for Awards and Education (Swapped) -->
         <div className="grid md:grid-cols-2 gap-12 page-break-inside-avoid">
           
-          <!-- Education Section -->
-          <section>
-            <h2 className="text-2xl font-bold text-slate-900 dark:text-white mb-8 flex items-center gap-3">
-              <div className="p-2 bg-indigo-100 dark:bg-indigo-900/30 rounded-lg text-indigo-600 dark:text-indigo-400">
-                <${GraduationCap} size=${24} />
-              </div>
-              ${uiStrings.resume.education}
-            </h2>
-            
-            <div className="space-y-6">
-              ${resumeData.education.map((edu, idx) => html`
-                <div key=${idx} className="bg-white dark:bg-slate-800 p-6 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm hover:border-indigo-400 dark:hover:border-indigo-500 transition-colors">
-                  <h3 className="text-lg font-bold text-slate-900 dark:text-white mb-1">${edu.school}</h3>
-                  <p className="text-indigo-600 dark:text-indigo-400 font-medium mb-2">${edu.degree}</p>
-                  <div className="flex justify-between items-center text-sm text-slate-500 dark:text-slate-400">
-                    <span>${edu.period}</span>
-                    <span>${edu.location}</span>
-                  </div>
-                </div>
-              `)}
-            </div>
-          </section>
-
           <!-- Awards/Certificates Section -->
           <section>
             <h2 className="text-2xl font-bold text-slate-900 dark:text-white mb-8 flex items-center gap-3">
@@ -202,6 +179,29 @@ const Resume = () => {
                   <//>
                 `;
               })}
+            </div>
+          </section>
+
+          <!-- Education Section -->
+          <section>
+            <h2 className="text-2xl font-bold text-slate-900 dark:text-white mb-8 flex items-center gap-3">
+              <div className="p-2 bg-indigo-100 dark:bg-indigo-900/30 rounded-lg text-indigo-600 dark:text-indigo-400">
+                <${GraduationCap} size=${24} />
+              </div>
+              ${uiStrings.resume.education}
+            </h2>
+            
+            <div className="space-y-6">
+              ${resumeData.education.map((edu, idx) => html`
+                <div key=${idx} className="bg-white dark:bg-slate-800 p-6 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm hover:border-indigo-400 dark:hover:border-indigo-500 transition-colors">
+                  <h3 className="text-lg font-bold text-slate-900 dark:text-white mb-1">${edu.school}</h3>
+                  <p className="text-indigo-600 dark:text-indigo-400 font-medium mb-2">${edu.degree}</p>
+                  <div className="flex justify-between items-center text-sm text-slate-500 dark:text-slate-400">
+                    <span>${edu.period}</span>
+                    <span>${edu.location}</span>
+                  </div>
+                </div>
+              `)}
             </div>
           </section>
 
