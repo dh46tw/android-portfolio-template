@@ -6,6 +6,7 @@ import Header from './components/Header.js';
 import Footer from './components/Footer.js';
 import ProjectDetail from './components/ProjectDetail.js';
 import Home from './components/Home.js';
+import Resume from './components/Resume.js';
 
 const App = () => {
   // 動態更新 Favicon
@@ -27,6 +28,7 @@ const App = () => {
           <${Routes}>
             <${Route} path="/" element=${html`<${Home} />`} />
             <${Route} path="/project/:id" element=${html`<${ProjectDetail} />`} />
+            <${Route} path="/resume" element=${html`<${Resume} />`} />
           <//>
         </main>
         <${Footer} />

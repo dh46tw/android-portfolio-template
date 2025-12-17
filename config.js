@@ -17,6 +17,8 @@ export const siteConfig = {
 export const uiStrings = {
   header: {
     brand: "Android Portfolio Template",
+    projects: "Projects",
+    resume: "Resume",
     toggleTheme: "Toggle Dark Mode"
   },
   hero: {
@@ -43,6 +45,14 @@ export const uiStrings = {
     tags: "Tags",
     challenges: "Key Challenges & Solutions",
     viewImage: "View"
+  },
+  resume: {
+    experience: "Work Experience",
+    education: "Education",
+    skills: "Technical Skills",
+    awards: "Awards & Certificates",
+    present: "Present",
+    download: "Download PDF"
   },
   footer: {
     tech: "Designed & Built with React (htm), Tailwind, and JavaScript (ESM).",

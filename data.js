@@ -85,3 +85,84 @@ export const projects = [
     techStack: ["Kotlin", "ARCore", "Sceneform", "Google Maps SDK", "SensorManager"]
   },
 ];
+
+// Resume Data
+export const resumeData = {
+  resumeUrl: "https://example.com/path-to-your-resume.pdf", // Link to download PDF
+  profile: {
+    name: "Alex Chen",
+    role: "Senior Android Software Engineer",
+    location: "Taipei, Taiwan",
+    summary: "Passionate Android Developer with 5+ years of experience building high-performance mobile applications. Expert in Kotlin, Jetpack Compose, and modern Android architecture. Committed to writing clean, maintainable code and delivering exceptional user experiences.",
+    email: "alex.chen@example.com",
+    linkedin: "linkedin.com/in/alexchen",
+    github: "github.com/alexchen",
+    website: "alexchen.dev"
+  },
+  skills: [
+    {
+      category: "Languages",
+      items: ["Kotlin", "Java", "Python", "SQL", "Shell Scripting"]
+    },
+    {
+      category: "Android SDK",
+      items: ["Jetpack Compose", "Coroutines & Flow", "Dagger/Hilt", "Room", "Retrofit", "WorkManager"]
+    },
+    {
+      category: "Architecture & Design",
+      items: ["MVVM", "MVI", "Clean Architecture", "SOLID Principles", "Design Patterns"]
+    },
+    {
+      category: "Tools & DevOps",
+      items: ["Git", "Gradle", "CI/CD (GitHub Actions)", "Firebase", "Jira", "Figma"]
+    }
+  ],
+  experience: [
+    {
+      company: "TechGiant Solutions",
+      role: "Senior Android Engineer",
+      period: "2022 - Present",
+      location: "Taipei, Taiwan",
+      description: "Leading the mobile engineering team for the flagship e-commerce application.",
+      achievements: [
+        "Architected and migrated the main app from Java to 100% Kotlin using Jetpack Compose, reducing boilerplate code by 40%.",
+        "Improved app startup time by 35% through baseline profiles and lazy initialization strategies.",
+        "Mentored 3 junior developers and introduced CI/CD pipelines using GitHub Actions."
+      ]
+    },
+    {
+      company: "AppWorks Startup",
+      role: "Android Developer",
+      period: "2020 - 2022",
+      location: "Taipei, Taiwan",
+      description: "Core member of a fast-paced fintech startup building a crypto wallet.",
+      achievements: [
+        "Implemented biometric authentication and secure key storage using Android Keystore System.",
+        "Integrated WebSockets for real-time market data updates with low latency.",
+        "Collaborated closely with designers to implement complex custom animations."
+      ]
+    }
+  ],
+  education: [
+    {
+      school: "National Taiwan University",
+      degree: "B.S. in Computer Science",
+      period: "2016 - 2020",
+      location: "Taipei, Taiwan"
+    }
+  ],
+  certificates: [
+    {
+      title: "Google Associate Android Developer",
+      issuer: "Google",
+      date: "2021",
+      url: "https://developers.google.com/certification/associate-android-developer"
+    },
+    {
+      title: "Certified ScrumMaster® (CSM)",
+      issuer: "Scrum Alliance",
+      date: "2022",
+      url: "https://www.scrumalliance.org/"
+    }
+  ]
+};
