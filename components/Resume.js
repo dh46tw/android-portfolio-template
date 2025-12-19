@@ -1,3 +1,4 @@
+
 import React, { useEffect } from 'react';
 import { html } from 'htm/react';
 import { Briefcase, GraduationCap, Award, Download, MapPin, Mail, Cpu, ExternalLink } from 'lucide-react';
@@ -29,29 +30,43 @@ const Resume = () => {
         `}
 
         <!-- Profile Header -->
-        <header className="mb-12 border-b border-slate-200 dark:border-slate-700 pb-10">
-          <h1 className="text-4xl md:text-5xl font-bold text-slate-900 dark:text-white mb-2">
-            ${resumeData.profile.name}
-          </h1>
-          <h2 className="text-xl md:text-2xl text-android-600 dark:text-android-400 font-medium mb-6">
-            ${resumeData.profile.role}
-          </h2>
+        <header className="mb-12 border-b border-slate-200 dark:border-slate-700 pb-10 flex flex-col md:flex-row gap-8 items-center md:items-start text-center md:text-left">
           
-          <p className="text-slate-600 dark:text-slate-300 text-lg leading-relaxed max-w-3xl mb-6">
-            ${resumeData.profile.summary}
-          </p>
-
-          <div className="flex flex-wrap gap-4 md:gap-6 text-sm text-slate-500 dark:text-slate-400">
-            <div className="flex items-center gap-2">
-              <${MapPin} size=${16} />
-              ${resumeData.profile.location}
+          <!-- Profile Photo -->
+          ${resumeData.profile.photo && html`
+            <div className="flex-shrink-0">
+              <img 
+                src=${resumeData.profile.photo} 
+                alt=${resumeData.profile.name}
+                className="w-32 h-32 md:w-40 md:h-40 rounded-full object-cover shadow-xl border-4 border-white dark:border-slate-800 bg-slate-100 dark:bg-slate-800"
+              />
             </div>
-            ${resumeData.profile.email && html`
-              <a href=${`mailto:${resumeData.profile.email}`} className="flex items-center gap-2 hover:text-android-600 dark:hover:text-android-400 transition-colors">
-                <${Mail} size=${16} />
-                ${resumeData.profile.email}
-              </a>
-            `}
+          `}
+
+          <div className="flex-grow">
+            <h1 className="text-4xl md:text-5xl font-bold text-slate-900 dark:text-white mb-2">
+              ${resumeData.profile.name}
+            </h1>
+            <h2 className="text-xl md:text-2xl text-android-600 dark:text-android-400 font-medium mb-6">
+              ${resumeData.profile.role}
+            </h2>
+            
+            <p className="text-slate-600 dark:text-slate-300 text-lg leading-relaxed max-w-3xl mb-6">
+              ${resumeData.profile.summary}
+            </p>
+
+            <div className="flex flex-wrap justify-center md:justify-start gap-4 md:gap-6 text-sm text-slate-500 dark:text-slate-400">
+              <div className="flex items-center gap-2">
+                <${MapPin} size=${16} />
+                ${resumeData.profile.location}
+              </div>
+              ${resumeData.profile.email && html`
+                <a href=${`mailto:${resumeData.profile.email}`} className="flex items-center gap-2 hover:text-android-600 dark:hover:text-android-400 transition-colors">
+                  <${Mail} size=${16} />
+                  ${resumeData.profile.email}
+                </a>
+              `}
+            </div>
           </div>
         </header>
 
@@ -102,7 +117,7 @@ const Resume = () => {
           </div>
         </section>
 
-        <!-- Technical Skills Section (Moved Below Experience) -->
+        <!-- Technical Skills Section -->
         <section className="mb-12">
           <h2 className="text-2xl font-bold text-slate-900 dark:text-white mb-6 flex items-center gap-3">
              <div className="p-2 bg-slate-100 dark:bg-slate-800 rounded-lg text-slate-600 dark:text-slate-400">
@@ -134,7 +149,7 @@ const Resume = () => {
           </div>
         </section>
 
-        <!-- Two Column Layout for Awards and Education (Swapped) -->
+        <!-- Two Column Layout for Awards and Education -->
         <div className="grid md:grid-cols-2 gap-12 page-break-inside-avoid">
           
           <!-- Awards/Certificates Section -->

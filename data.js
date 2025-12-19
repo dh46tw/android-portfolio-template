@@ -126,6 +126,7 @@ export const resumeData = {
   profile: {
     name: "Alex Chen",
     role: "Senior Android Software Engineer",
+    photo: "https://picsum.photos/id/64/400/400", // Added profile photo
     location: "Taipei, Taiwan",
     summary: "Passionate Android Developer with 5+ years of experience building high-performance mobile applications. Expert in Kotlin, Jetpack Compose, and modern Android architecture. Committed to writing clean, maintainable code and delivering exceptional user experiences.",
     email: "alex.chen@example.com",
